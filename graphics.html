@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<style>
+    .form-control{
+        width: 100%;
+    }
+    .content{
+        display: grid;
+        grid-template-columns: repeat(2, 350px);
+        grid-gap: 0 10px;
+    }
+    label{
+        font-size: 20px;
+    }
+    button{
+        position: absolute;
+        right: 50%;
+    }
+    .draw{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 30%;
+        left: 30%;
+    }
+   
+</style>
+<body>
+ 
+    <div class="container">
+        <div class="content">
+            <div class="form-group w-1">
+                <label for="usr">Width</label>
+                <select class="form-control" name="" id="select"></select>
+              </div>
+              <div class="form-group">
+                <label for="radius">Height</label>
+                <select class="form-control" name="" id="select2"></select>
+              </div>
+
+
+
+              <div class="form-group w-1">
+                <label for="usr">Color</label>
+                <select class="form-control" name="" id="select3"></select>
+              </div>
+              <div class="form-group">
+                <label for="radius">Radius</label>
+                <select class="form-control" name="" id="select4"></select>
+              </div>
+        </div>
+    </div>
+    <!-- <button class="btn btn-dark" id="ok">ok</button> -->
+
+<div id="center" class="center">
+        <!-- <div class="draw">wweerrr</div> -->
+</div>
+
+    <script>    
+    let color=['red', 'green','violet','orange','yellow', 'purple', 'grey', 'black', ]
+        let option=document.querySelectorAll('option')
+        let ok=document.querySelectorAll('ok')
+let i=0
+
+       // select.forEach(element => {
+            for (let index = 10; index < 100; index++) {
+                    select.innerHTML+=`<option>${index}%</option>`
+             }
+            for (let index = 10; index < 100; index++) {
+                    select2.innerHTML+=`<option>${index}%</option>`
+             }
+            for (let index = 10; index < 20; index++) {
+                    select3.innerHTML+=`<option>${color[i++]}</option>`
+             }
+            for (let index = 10; index < 100; index++) {
+                    select4.innerHTML+=`<option>${index}%</option>`
+             }
+       // });
+
+       ok=document.addEventListener('click', ()=>{
+            let width=document.getElementById('select').value
+            let height=document.getElementById('select2').value
+            let coloring=document.getElementById('select3').value
+            let radius=document.getElementById('select4').value
+            center.innerHTML=`<div class="draw" style="background: ${coloring}; width: ${width}; height: ${height}; border-radius: ${radius};"></div>`
+       })
+      
+    </script>
+</body>
+</html>
